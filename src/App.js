@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Filters from './components/filters';
+import Layout from './components/layout';
+import Profile from './components/profile';
+import RepoList from './components/repo-list/repo-list';
+import Search from './components/search';
+
+const repoList = [
+  {
+    name: "Mi primer repo en react",
+    id: 12232
+  },
+  {
+    name: "Mi segundo repo en react",
+    id: 122329882
+  }
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Layout>
+      <Profile />
+      <Filters />
+      <RepoList repoList={repoList} />
+      <Search />
+    </Layout>
+  )
 }
 
 export default App;
